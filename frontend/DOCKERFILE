@@ -9,6 +9,9 @@ COPY package*.json ./
 
 # Install frontend dependencies
 RUN npm install
+# Accept build argument
+ARG VITE_API_URL
+ENV VITE_API_URL=$VITE_API_URL
 
 # Copy all frontend files
 COPY . .
